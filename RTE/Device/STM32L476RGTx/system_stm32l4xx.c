@@ -115,9 +115,9 @@
   #define MSI_VALUE    4000000U  /*!< Value of the Internal oscillator in Hz*/
 #endif /* MSI_VALUE */
 
-#if !defined  (HSI_VALUE)
-  #define HSI_VALUE    16000000U /*!< Value of the Internal oscillator in Hz*/
-#endif /* HSI_VALUE */
+//#if !defined  (HSI_VALUE)
+//  #define HSI_VALUE    16000000U /*!< Value of the Internal oscillator in Hz*/
+//#endif /* HSI_VALUE */
 
 /* Note: Following vector table addresses must be defined in line with linker
          configuration. */
@@ -291,9 +291,9 @@ void SystemCoreClockUpdate(void)
       SystemCoreClock = msirange;
       break;
 
-    case 0x04:  /* HSI used as system clock source */
-      SystemCoreClock = HSI_VALUE;
-      break;
+//    case 0x04:  /* HSI used as system clock source */
+//      SystemCoreClock = HSI_VALUE;
+//      break;
 
     case 0x08:  /* HSE used as system clock source */
       SystemCoreClock = HSE_VALUE;
@@ -308,9 +308,9 @@ void SystemCoreClockUpdate(void)
 
       switch (pllsource)
       {
-        case 0x02:  /* HSI used as PLL clock source */
-          pllvco = (HSI_VALUE / pllm);
-          break;
+//        case 0x02:  /* HSI used as PLL clock source */
+//          pllvco = (HSI_VALUE / pllm);
+//          break;
 
         case 0x03:  /* HSE used as PLL clock source */
           pllvco = (HSE_VALUE / pllm);
